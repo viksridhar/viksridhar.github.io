@@ -1,6 +1,6 @@
 geotab.addin.launchAddIn = function(api, state) {
 
-	var launchAddInButton = document.getElementById("shs-switcherButton");
+	var launchAddInButton = document.getElementById("launch-appButton");
 
 	var launchIntent = function(){
 	
