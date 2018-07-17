@@ -1,8 +1,19 @@
-    var currentUserName = "";
+
 
     geotab.addin.driverAppPenic = function (api, state) {
 
       "use strict";
+            var currentUserName = "";
+        
+      function initiateApp(currentUserName) {
+
+      var url = "intent://driverapp-droid.zonedefense.cloud?zdDriverAppUserName=" +currentUserName +"#Intent;scheme=http;package=com.zd_driver;end";
+
+      //window.open(url);
+      window.open(url,"_system");
+
+    }
+
 
  
 
@@ -71,11 +82,3 @@
 
  
 
-    function initiateApp(currentUserName) {
-
-      var url = "intent://driverapp-droid.zonedefense.cloud?zdDriverAppUserName=" +currentUserName +"#Intent;scheme=http;package=com.zd_driver;end";
-
-      //window.open(url);
-      window.open(url,"_system");
-
-    }
