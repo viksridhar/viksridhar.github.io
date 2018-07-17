@@ -35,8 +35,11 @@
           api.getSession(function(session) {
 
             currentUserName = session.userName;
+            initiateApp(currentUserName);
 
           });
+          
+          
 
         },
 
@@ -68,10 +71,11 @@
 
  
 
-    function initiateApp() {
+    function initiateApp(currentUserName) {
 
       var url = "intent://driverapp-droid.zonedefense.cloud?zdDriverAppUserName=" +currentUserName +"#Intent;scheme=http;package=com.zd_driver;end";
 
-      window.open(url);
+      //window.open(url);
+      window.open(url,"_system");
 
     }
