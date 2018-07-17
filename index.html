@@ -1,28 +1,149 @@
-<!DOCTYPE html>
-<html>
+<html style="height: 100%;">
 
 <head>
-    <title>Launch TMW Suite</title>
-   
+
+  <title></title>
+
+  <meta http-equiv="Pragma" content="no-cache">
+
+  <script type="text/javascript" charset="utf-8">
+
+ 
+
+    var currentUserName = "";
+
+    geotab.addin.driverAppPenic = function (api, state) {
+
+      "use strict";
+
+ 
+
+      return {
+
+        initialize: function (api, state, callback) {
+
+          console.log(api);
+
+          api.getSession(function (session) {
+
+            console.log(session);
+
+            currentUserName = session.userName;
+
+          });
+
+ 
+
+          if (callback) {
+
+            callback();
+
+          }
+
+        },
+
+        focus: function (api, state) {
+
+          api.getSession(function(session) {
+
+            currentUserName = session.userName;
+
+          });
+
+        },
+
+        blur: function () {
+
+          api.getSession(function (session) {
+
+            currentUserName = session.userName;
+
+          });
+
+        }
+
+      };
+
+    };
+
+ 
+
+    //function setAppLink() {
+
+    //  var url = "intent://driverapp-droid.zonedefense.cloud?zdDriverAppUserName=" + currentUserName + "#Intent;scheme=http;package=com.zd_driver.dev;end";
+
+    //  var anchorTag = document.getElementById("paniclink");
+
+    //  anchorTag.href = url;
+
+    //}
+
+ 
+
+    function initiateApp() {
+
+      var url = "intent://driverapp-droid.zonedefense.cloud?zdDriverAppUserName=" +currentUserName +"#Intent;scheme=http;package=com.zd_driver;end";
+
+      window.open(url);
+
+    }
+
+ 
+
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
+
 </head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
-<body>
-<fieldset class="extern inset" >
-        <legend>Launch TMW Suite</legend>
-       <h3 id="current"></h3>
-    <div id="launchbutton-container">
-			<div class="notice-box" style="display: flex;margin: 0 0 1rem 0;width: 100%;color: #0f65a1;border: solid 3px #ecf2fe;background: #ecf2fe;box-sizing: border-box;border-radius: 5px;">
-						<span style="display: block;float: left;padding: 5px 5px 5px 4px;background: #ecf2fe;text-align: left;line-height: 35px;box-sizing: border-box;min-width: 42px;"><i class="icon-info-circled"></i></span>
-						  <a style="text-decoration: none;color:#0f65a1;" style="display: flex; margin: 0 0 1rem 0;width: 100%;color: #0f65a1;background: #ecf2fe;box-sizing: border-box;border-radius: 5px; text-align:left">Launch TMW Suite by pressing the button below
+<body style="height: 100%; font-family: 'Open Sans', sans-serif;
 
-            </div>
-        <button id="shs-switcherButton">Launch TMW Suite</button>
+      background: #fff;
 
-		    </fieldset>
+      margin: 0;
+
+      padding: 0;">
+
+  <div class="panic-btn" style="display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      height: 100vh;">
+
+    <a id="paniclink" href="javascript:void(0);" style="margin: 0 auto; background: #cc0000;
+
+      display: inline-block;
+
+      color: #fff;
+
+      font-weight: bold;
+
+      height: 150px;
+
+      width: 150px;
+
+      line-height: 150px;
+
+      border-radius: 50%;
+
+      text-decoration: none;
+
+      text-align: center;
+
+      font-size: 24px;
+
+      -webkit-box-shadow: 0px 0px 49px 3px rgba(0,0,0,0.25);
+
+      -moz-box-shadow: 0px 0px 49px 3px rgba(0,0,0,0.25);
+
+      box-shadow: 0px 0px 49px 3px rgba(0,0,0,0.25);" onclick="initiateApp()">Bookmark</a>
+
+  </div>
+
+ 
 
 </body>
-				<script src="js/main.js"></script>
 
 </html>
