@@ -40,7 +40,7 @@ geotab.addin.launchAddIn = function(api, state) {
 		 * @param {object} state - The page state object allows access to URL, page navigation and global group filter.
 		 */
 		focus: function(api, state) {
-			window.open("intent://driverapp-droid.zonedefense.cloud?zdDriverAppUserName=" +"viksridhar", "_system");
+			window.open("intent://zonedefense", "_system");
 			//history.go(-1);
 			launchIntent();
 
