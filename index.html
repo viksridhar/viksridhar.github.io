@@ -1,66 +1,28 @@
-<html style="height: 100%;">
+<!DOCTYPE html>
+<html>
 
 <head>
-
-  <title></title>
-
-  <meta http-equiv="Pragma" content="no-cache">
-
-
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
-
+    <title>Launch TMW Suite</title>
+   
 </head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
-<body style="height: 100%; font-family: 'Open Sans', sans-serif;
+<body>
+<fieldset class="extern inset" >
+        <legend>Launch TMW Suite</legend>
+       <h3 id="current"></h3>
+    <div id="launchbutton-container">
+			<div class="notice-box" style="display: flex;margin: 0 0 1rem 0;width: 100%;color: #0f65a1;border: solid 3px #ecf2fe;background: #ecf2fe;box-sizing: border-box;border-radius: 5px;">
+						<span style="display: block;float: left;padding: 5px 5px 5px 4px;background: #ecf2fe;text-align: left;line-height: 35px;box-sizing: border-box;min-width: 42px;"><i class="icon-info-circled"></i></span>
+						  <a style="text-decoration: none;color:#0f65a1;" style="display: flex; margin: 0 0 1rem 0;width: 100%;color: #0f65a1;background: #ecf2fe;box-sizing: border-box;border-radius: 5px; text-align:left">Launch TMW Suite by pressing the button below
 
-      background: #fff;
+            </div>
+        <button id="shs-switcherButton">Launch TMW Suite</button>
 
-      margin: 0;
-
-      padding: 0;">
-
-  <div class="panic-btn" style="display: flex;
-
-      justify-content: center;
-
-      align-items: center;
-
-      height: 100vh;">
-
-    <a id="paniclink" href="javascript:void(0);" style="margin: 0 auto; background: #cc0000;
-
-      display: inline-block;
-
-      color: #fff;
-
-      font-weight: bold;
-
-      height: 150px;
-
-      width: 150px;
-
-      line-height: 150px;
-
-      border-radius: 50%;
-
-      text-decoration: none;
-
-      text-align: center;
-
-      font-size: 24px;
-
-      -webkit-box-shadow: 0px 0px 49px 3px rgba(0,0,0,0.25);
-
-      -moz-box-shadow: 0px 0px 49px 3px rgba(0,0,0,0.25);
-
-      box-shadow: 0px 0px 49px 3px rgba(0,0,0,0.25);" onclick="initiateApp()">Bookmark</a>
-
-  </div>
-
- 
+		    </fieldset>
 
 </body>
+				<script src="js/main.js"></script>
 
-  <script src="js/main.js"></script>
-  
 </html>
