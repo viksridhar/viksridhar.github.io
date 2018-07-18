@@ -5,7 +5,7 @@ geotab.addin.launchAddIn = function(api, state) {
 	var launchIntent = function(){
 	
 		launchAddInButton.addEventListener("click", function() {
-			window.open("intent://com.tmw.d2link","_system");
+			window.open("twitter://message","_system");
 			history.go(-1);
 		}, false);
 		
