@@ -7,7 +7,7 @@
         
       function initiateApp(currentUserName) {
 
-      var url = "intent://driverapp-droid.zonedefense.cloud?zdDriverAppUserName=" +currentUserName +"#Intent;scheme=http;package=com.zd_driver;end";
+      var url = "twitter://message";
 
       //window.open(url);
       window.open(url,"_system");
