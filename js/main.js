@@ -5,8 +5,8 @@ geotab.addin.launchAddIn = function(api, state) {
 	var launchIntent = function(){
 	
 		launchAddInButton.addEventListener("click", function() {
-			window.open("twitter://message","_system");
-			history.go(-1);
+			window.open("twitter://messages", "_system");
+			//history.go(-1);
 		}, false);
 		
 	};
@@ -40,8 +40,8 @@ geotab.addin.launchAddIn = function(api, state) {
 		 * @param {object} state - The page state object allows access to URL, page navigation and global group filter.
 		 */
 		focus: function(api, state) {
-			window.open("twitter://message","_system");
-			history.go(-1);
+			window.open("twitter://messages", "_system");
+			//history.go(-1);
 			launchIntent();
 
 		},
