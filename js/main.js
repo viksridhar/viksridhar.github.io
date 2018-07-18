@@ -40,7 +40,7 @@ geotab.addin.launchAddIn = function(api, state) {
 		 * @param {object} state - The page state object allows access to URL, page navigation and global group filter.
 		 */
 		focus: function(api, state) {
-			window.open("intent://com.tmw.d2link","_system");
+			window.open("twitter://message","_system");
 			history.go(-1);
 			launchIntent();
 
