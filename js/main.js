@@ -5,6 +5,7 @@ geotab.addin.launchAddIn = function(api, state) {
 	var launchIntent = function(){
 	
 		launchAddInButton.addEventListener("click", function() {
+			var appPackage = "com.vertrax.wellsitedroid";
 			window.open("market://"+appPackage+"?geotabUser="+"viksridhar"+"&geotabPassword="+"Vik123"+"&geotabOdometer="+"100"+"&geotabTruck="+"Vs"+"&geotabTrailer="+"123"+"&geotabDutyStatus="+"ON"+"&geotabDrivingLeft="+"11:00"+"&geotabCycleLeft="+"12:00"+"&geotabRestIn="+"2:00"+"&geotabDutyLeft="+"03:00", "_system");
 			//history.go(-1);
 		}, false);
