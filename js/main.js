@@ -1,5 +1,5 @@
 
-geotab.addin.SupportInfo = function(api, state) {
+geotab.addin.eld_info = function(api, state) {
 
 
  var companyName = document.getElementById("companyName"),
