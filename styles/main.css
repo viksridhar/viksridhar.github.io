@@ -3,6 +3,7 @@ background: #fff;
 padding: 1.8rem;
 margin: 0 0 0 0;
 display: block;
+background-color : #fff"
 }
 .panel_title_addIn{
 font-size: 2.4rem;
@@ -37,7 +38,18 @@ color: #696A6C;
     padding: 8px;
     text-align: left;
     border-bottom: 3px solid #ddd;
-} 
+}
+.table {
+    background-color: #fff;
+    filter: alpha(opacity=40);
+    opacity:0.95;
+    text-align:center;
+    padding:10;
+    border-spacing:10;
+}
+.th{
+    
+}  
 /* 
 input, label{
   display: inline-block;
