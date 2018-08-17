@@ -1,0 +1,53 @@
+.panel_addIn{
+background: #fff;
+padding: 1.8rem;
+margin: 0 0 0 0;
+display: block;
+}
+.panel_title_addIn{
+font-size: 2.4rem;
+color: #17202A;	
+font-weight: normal;
+text-transform: uppercase;
+overflow: hidden;
+text-overflow:ellipsis;
+white-space:nowrap;
+word-wrap:normal;
+}
+.notice-box {
+    display: flex;
+    margin: 0 0 1rem 0;
+    width: 100%;
+    color: #0f65a1;
+    border: solid 3px #0f65a1;
+    background: #ecf2fe;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.wide { 
+min-width: 100%; 
+display: inline-block; 
+background-color: #25477B; 
+color: #fff;
+}
+.control-label-labels{
+color: #696A6C;
+}
+.table-columns {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 3px solid #ddd;
+} 
+/* 
+input, label{
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px 0;
+}
+ table {
+    border-collapse: collapse;
+}  
+ */
+ 
+
+
