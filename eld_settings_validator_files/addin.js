@@ -1,6 +1,8 @@
 geotab.addin.eldSettingsValidator = function(api, state) {
         var userList = [],
             vehicleList = [],
+	    vin = [],
+            vins,
             servers = "",
             database = "",
             refresh = document.getElementById("refresh"),
@@ -12,6 +14,17 @@ geotab.addin.eldSettingsValidator = function(api, state) {
             api.call("Get", {
                 "typeName": "Device"
             }, function(results) {
+		    
+		for (var i = 0; i < results.length; i++){
+                vin.push(results[i].vehicleIdentificationNumber);
+                }
+
+                api.call("DecodeVins", {
+                    "vins": vin,
+                 }, function(result) {
+                    vins = result 
+                 });
+		    
                 for (var i = 0; i < results.length; i++) {
 					var ratePlan = "No Plan";
 					var licensePlateInfo = "Yes";
