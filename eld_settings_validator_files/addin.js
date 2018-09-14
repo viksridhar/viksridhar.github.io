@@ -23,6 +23,7 @@ geotab.addin.eldSettingsValidator = function(api, state) {
             }, function(result) {
                 vins = result;
                     console.log("Done: ", vins);
+		    callback();
             }, function(e) {
                 console.error("Failed:", e);
             });
