@@ -528,9 +528,9 @@ geotab.addin.eldSettingsValidator = function(api, state) {
                     if (result.length === 0) {
                         throw "Unable to find currently logged on user."
                     }
+		    getVinDecode();
                     initializeCallback();
                     refresh.disabled = true;
-                    getVinDecode();
                     run();
                 }, function(error) {
                     throw "Error while trying to load currently logged on user. " + error;
