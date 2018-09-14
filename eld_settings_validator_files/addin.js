@@ -10,7 +10,7 @@ geotab.addin.eldSettingsValidator = function(api, state) {
             vehicleReport = document.getElementById("vehicleReport"),
             button = document.getElementById("toolTipHelp");
 
-        var getVinDecode = function () {
+        var getVinDecode = function (callback) {
            
             api.call("Get", {
                 "typeName": "Device",
@@ -531,9 +531,8 @@ geotab.addin.eldSettingsValidator = function(api, state) {
 
                     initializeCallback();
                     refresh.disabled = true;
-                    return getVinDecode()
-                    .then(() =>  run())
-                    .catch(e => console.error(e));
+                    return getVinDecode(run);
+
                 }, function(error) {
                     throw "Error while trying to load currently logged on user. " + error;
                 });
