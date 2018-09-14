@@ -27,10 +27,7 @@ geotab.addin.eldSettingsValidator = function(api, state) {
                         }
                         if (results[i].licenseState === undefined || results[i].licenseState === null || results[i].licenseState === "" || results[i].licensePlate === undefined || results[i].licensePlate === null || results[i].licensePlate === "") {
                             licensePlateInfo = "No";
-                        }
-			if (vins[i].error !== "None"){
-                            vinInfo = "Invalid"
-                        }    
+                        } 
                         if (results[i].devicePlans !== undefined) {
                             ratePlan = results[i].devicePlans[0];
                         }
