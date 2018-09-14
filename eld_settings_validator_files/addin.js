@@ -1,7 +1,7 @@
 geotab.addin.eldSettingsValidator = function(api, state) {
         var userList = [],
             vehicleList = [],
-	    vin = [],
+            vin = [],
             vins,
             servers = "",
             database = "",
@@ -10,16 +10,40 @@ geotab.addin.eldSettingsValidator = function(api, state) {
             vehicleReport = document.getElementById("vehicleReport"),
             button = document.getElementById("toolTipHelp");
 
+        var getVinDecode = function () {
+           
+            api.call("Get", {
+                "typeName": "Device",
+            }, function(results) {
+                for (var i = 0; i < results.length; i++){
+                    vin.push(results[i].vehicleIdentificationNumber);
+                    }
+            api.call("DecodeVins", {
+                "vins": vin,
+            }, function(result) {
+                vins = result;
+                    console.log("Done: ", vins);
+            }, function(e) {
+                console.error("Failed:", e);
+            });
+            }, function(e) {
+                console.error("Failed:", e);
+            });
+
+            }
+
         var vehicle = function() {
             api.call("Get", {
                 "typeName": "Device"
-            }, function(results) {		    
+            }, function(results) {
+
                 for (var i = 0; i < results.length; i++) {
 					var ratePlan = "No Plan";
 					var licensePlateInfo = "Yes";
 					var vinInfo = "Yes";
 					var autoHOS = "Unknown";
-					var nameVehicle = "none";
+                    var nameVehicle = "none";
+                   
 					
                     if (results[i].serialNumber !== "000-000-0000") {
                         if (results[i].vehicleIdentificationNumber === undefined || results[i].vehicleIdentificationNumber === null || results[i].vehicleIdentificationNumber === "") {
@@ -27,7 +51,10 @@ geotab.addin.eldSettingsValidator = function(api, state) {
                         }
                         if (results[i].licenseState === undefined || results[i].licenseState === null || results[i].licenseState === "" || results[i].licensePlate === undefined || results[i].licensePlate === null || results[i].licensePlate === "") {
                             licensePlateInfo = "No";
-                        } 
+                        }
+                        if (vins[i].error !== "None"){
+                            vinInfo = "Invalid"
+                        }
                         if (results[i].devicePlans !== undefined) {
                             ratePlan = results[i].devicePlans[0];
                         }
@@ -503,6 +530,7 @@ geotab.addin.eldSettingsValidator = function(api, state) {
                     }
                     initializeCallback();
                     refresh.disabled = true;
+                    getVinDecode();
                     run();
                 }, function(error) {
                     throw "Error while trying to load currently logged on user. " + error;
