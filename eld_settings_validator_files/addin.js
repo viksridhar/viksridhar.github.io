@@ -53,7 +53,7 @@ geotab.addin.eldSettingsValidator = function(api, state) {
                         if (results[i].licenseState === undefined || results[i].licenseState === null || results[i].licenseState === "" || results[i].licensePlate === undefined || results[i].licensePlate === null || results[i].licensePlate === "") {
                             licensePlateInfo = "No";
                         }
-                        if (vins[i].error !== "None"){
+                        if (((vins[i].error === "InvalidVinError" || vins[i].error === "CheckDigitError") && (vins[i].vin !== undefined || vins[i].vin !== null || vins[i].vin !== ""))){
                             vinInfo = "Invalid"
                         }
                         if (results[i].devicePlans !== undefined) {
