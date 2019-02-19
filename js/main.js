@@ -23,14 +23,12 @@ return {
 		*/
 		initialize: function(api, state, addInReady) {
 
-
-			
-			api.getCurrentCredentials(function (currentCredentials) {
-				server = currentCredentials.server;
-				database = currentCredentials.credentials.database;
-				username = currentCredentials.credentials.username;
-				credentials = currentCredentials.credentials;
-				sessionid = currentCredentials.credentials.sessionId;
+			api.getSession(function (session) {
+				
+				database = session.database;
+				username = session.username;
+				credentials = session;
+				sessionid = session.sessionId;
 
 				api.call("Get", {
 					"typeName" : "User",
@@ -49,6 +47,8 @@ return {
 				});
 			});
 			
+
+			
 		},
 
 		/**
@@ -64,14 +64,12 @@ return {
 		*/
 		focus: function(api, state) {
 
-
-			
-			api.getCurrentCredentials(function (currentCredentials) {
-				server = currentCredentials.server;
-				database = currentCredentials.credentials.database;
-				username = currentCredentials.credentials.username;
-				credentials = currentCredentials.credentials;
-				sessionid = currentCredentials.credentials.sessionId;
+			api.getSession(function (session) {
+				
+				database = session.database;
+				username = session.username;
+				credentials = session;
+				sessionid = session.sessionId;
 
 				api.call("Get", {
 					"typeName" : "User",
@@ -82,12 +80,13 @@ return {
 					if (result.length === 0) {
 						alert( "Unable to find currently logged on user.");
 					}
-					driverid = result[0].id;	
+					driverid = result[0].id;
 
 				}, function (error) {
 					console.log( "Error while trying to load currently logged on user. " + error);
 				});
 			});
+
 			
 
 		},
