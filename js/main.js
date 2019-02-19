@@ -11,7 +11,11 @@ geotab.addin.downloadHOSLogs = function(api, state) {
 	downloadExcelButton=document.getElementById("downloadExcelButton");
 
 	function openMyGeotabFunction() {
-		var url = "https://"+server+"/geotab/checkmate/ui/hosLogs.html#credentials:(database:"+database+",sessionId:"+sessionid+",userName:"+username+"),dateRange:(endDate:"+(new Date().toISOString())+",startDate:"+(((new Date()).getDate()-7).toISOString())+"),driver:"+driverid+",includeExemptions:!f";
+		var currentDate = new Date().toISOString();
+		var cycleStart = new Date();
+		cycleStart.setDate(cycleStart.getDate()-7);
+		var cycleStartDay = cycleStart.toISOString();
+		var url = "https://"+server+"/geotab/checkmate/ui/hosLogs.html#credentials:(database:"+database+",sessionId:"+sessionid+",userName:"+username+"),dateRange:(endDate:"+currentDate+",startDate:"+cycleStartDay+"),driver:"+driverid+",includeExemptions:!f";
 		window.open(url, "_blank");
 
 	}
@@ -19,13 +23,17 @@ geotab.addin.downloadHOSLogs = function(api, state) {
 	
 	function downloadExcelFunction() {
 
+		var currentDate = new Date().toISOString();
+		var cycleStart = new Date();
+		cycleStart.setDate(cycleStart.getDate()-7);
+		var cycleStartDay = cycleStart.toISOString();
 
 		var reportArgs = {
 			"reportArgument":{
 				"includeModifications":false,
 				"reportArgumentType":"HosLog",
-				"fromUtc":(((new Date()).getDate()-7).toISOString()),
-				"toUtc":(new Date().toISOString()),
+				"fromUtc":cycleStartDay,
+				"toUtc":currentDate,
 				"usersFilter":{"id":driverid},
 				"returnNoUserResultOnly":false,
 				"devices":null
@@ -153,10 +161,10 @@ geotab.addin.downloadHOSLogs = function(api, state) {
 							alert( "Unable to find currently logged on user.");
 						}
 						driverid = result[0].id;
-						mygeotab_button.disabled = false;
-						downloadExcelButton.disabled = false;
-						mygeotab_button.addEventListener("click", openMyGeotabFunction);
-						downloadExcelButton.addEventListener("click", downloadExcelFunction);
+		//				mygeotab_button.disabled = false;
+		//				downloadExcelButton.disabled = false;
+		//				mygeotab_button.addEventListener("click", openMyGeotabFunction);
+		//				downloadExcelButton.addEventListener("click", downloadExcelFunction);
 	
 					}, function (error) {
 						console.log( "Error while trying to load currently logged on user. " + error);
