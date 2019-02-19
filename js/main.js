@@ -132,8 +132,8 @@ geotab.addin.downloadHOSLogs = function(api, state) {
 			*/
 			focus: function(api, state) {
 
-				document.getElementById("mygeotab_button").disabled = true;
-				document.getElementById("downloadExcelFunction").disabled = true;
+			//	mygeotab_button.disabled = true;
+			//	downloadExcelButton.disabled = true;
 	
 				api.getSession(function (session) {
 					
@@ -153,10 +153,10 @@ geotab.addin.downloadHOSLogs = function(api, state) {
 							alert( "Unable to find currently logged on user.");
 						}
 						driverid = result[0].id;
-						document.getElementById("mygeotab_button").disabled = false;
-						document.getElementById("downloadExcelFunction").disabled = false;
-						document.getElementById("mygeotab_button").addEventListener("click", openMyGeotabFunction);
-						document.getElementById("downloadExcelButton").addEventListener("click", downloadExcelFunction);
+		//				mygeotab_button.disabled = false;
+		//				downloadExcelButton.disabled = false;
+		//				mygeotab_button.addEventListener("click", openMyGeotabFunction);
+		//				downloadExcelButton.addEventListener("click", downloadExcelFunction);
 	
 					}, function (error) {
 						console.log( "Error while trying to load currently logged on user. " + error);
