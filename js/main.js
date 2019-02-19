@@ -1,5 +1,14 @@
 geotab.addin.downloadHOSLogs = function(api, state) {
 
+/* var server = currentCredentials.server;
+database = currentCredentials.credentials.database;
+username = currentCredentials.credentials.username;
+credentials = currentCredentials.credentials;
+sessionid = currentCredentials.credentials.sessionId; */
+
+var server, database,username,credentials,sessionid, driverid;
+
+
 
 return {
 		/**
@@ -16,23 +25,32 @@ return {
 
 			api.getSession(function (session) {
 				var currentUser = session.userName;
+
+			});
+			
+			api.getCurrentCredentials(function (currentCredentials) {
+				server = currentCredentials.server;
+				database = currentCredentials.credentials.database;
+				username = currentCredentials.credentials.username;
+				credentials = currentCredentials.credentials;
+				sessionid = currentCredentials.credentials.sessionId;
+
 				api.call("Get", {
 					"typeName" : "User",
 					"search" : {
-						"name" : currentUser
+						"name" : username
 					}
 				}, function (result) {
 					if (result.length === 0) {
 						alert( "Unable to find currently logged on user.");
 					}
-				var driver = result[0].firstName + " " + result[0].lastName;	
-				addInReady();
+					driverid = result[0].id;
+					addInReady();	
 
 				}, function (error) {
 					console.log( "Error while trying to load currently logged on user. " + error);
 				});
-			});	
-				
+			})
 			
 		},
 
@@ -51,21 +69,31 @@ return {
 
 			api.getSession(function (session) {
 				var currentUser = session.userName;
+
+			});
+			
+			api.getCurrentCredentials(function (currentCredentials) {
+				server = currentCredentials.server;
+				database = currentCredentials.credentials.database;
+				username = currentCredentials.credentials.username;
+				credentials = currentCredentials.credentials;
+				sessionid = currentCredentials.credentials.sessionId;
+
 				api.call("Get", {
 					"typeName" : "User",
 					"search" : {
-						"name" : currentUser
+						"name" : username
 					}
 				}, function (result) {
 					if (result.length === 0) {
 						alert( "Unable to find currently logged on user.");
 					}
-				var driver = result[0].firstName + " " + result[0].lastName;	
+					driverid = result[0].id;	
 
 				}, function (error) {
 					console.log( "Error while trying to load currently logged on user. " + error);
 				});
-			});	
+			})
 			
 
 		},
@@ -83,3 +111,4 @@ return {
 		}
 	};
 };
+
