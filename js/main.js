@@ -101,7 +101,7 @@ geotab.addin.downloadHOSLogs = function(api, state) {
 				api.getSession(function (session) {
 					
 					database = session.database;
-					username = session.username;
+					username = session.userName;
 					credentials = session;
 					sessionid = session.sessionId;
 					server = window.location.hostname;
@@ -146,7 +146,7 @@ geotab.addin.downloadHOSLogs = function(api, state) {
 				api.getSession(function (session) {
 					
 					database = session.database;
-					username = session.username;
+					username = session.userName;
 					credentials = session;
 					sessionid = session.sessionId;
 					server = window.location.hostname;
