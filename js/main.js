@@ -70,6 +70,7 @@ return {
 				username = session.username;
 				credentials = session;
 				sessionid = session.sessionId;
+				api.getCurrentCredentials(function (currentCredentials) {console.log(currentCredentials)});
 
 				api.call("Get", {
 					"typeName" : "User",
