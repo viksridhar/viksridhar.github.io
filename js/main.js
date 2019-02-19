@@ -15,7 +15,7 @@ geotab.addin.downloadHOSLogs = function(api, state) {
 		var cycleStart = new Date();
 		cycleStart.setDate(cycleStart.getDate()-7);
 		var cycleStartDay = cycleStart.toISOString();
-		var url = "https://"+server+"/geotab/checkmate/ui/hosLogs.html#credentials:(database:"+database+",sessionId:"+sessionid+",userName:"+username+"),dateRange:(endDate:"+currentDate+",startDate:"+cycleStartDay+"),driver:"+driverid+",includeExemptions:!f";
+		var url = "https://"+server+"/geotab/checkmate/ui/hosLogs.html#credentials:(database:"+database+",sessionId:'"+sessionid+"',userName:'"+username+"'),dateRange:(endDate:'"+currentDate+"',startDate:'"+cycleStartDay+"'),driver:"+driverid+",includeExemptions:!f";
 		window.open(url, "_blank");
 
 	}
