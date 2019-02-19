@@ -23,10 +23,7 @@ return {
 		*/
 		initialize: function(api, state, addInReady) {
 
-			api.getSession(function (session) {
-				var currentUser = session.userName;
 
-			});
 			
 			api.getCurrentCredentials(function (currentCredentials) {
 				server = currentCredentials.server;
@@ -50,7 +47,7 @@ return {
 				}, function (error) {
 					console.log( "Error while trying to load currently logged on user. " + error);
 				});
-			})
+			});
 			
 		},
 
