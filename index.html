@@ -12,65 +12,56 @@
 	<link rel="stylesheet" href="https://app.geotab.com/geotabapps/add-in-css-style-guide/intgr-styles.css">
 	<script src="scripts/main.js"></script>
 </head>
-
 <body>
+    <div class="container">
+        <div class="driver-info">
+            <div class="driver-name">
+                John Doe
+            </div>
+            <div class="collision-risk-label">
+                Collision Risk (per 100,000 miles)
+            </div>
+            <div class="collision-risk-percentage">
+                45%
+            </div>
+        </div>
+    </div>
 
-	<div id="restrictedModeDrive" class="hidden">
-		<div class="menuTitle">
-			<div class="displayStatus">
-				<p>Restricted Data Mode</p>
-				<p><span id="currentStatus">Not set</span></p>
-			</div>
-			<img src="https://app.geotab.com/addins/geotab/privacy-mode/personalModeDrive/1.1.0/images/icon.svg"
-				alt="Restricted Mode Icon" id="logo">
-			<div></div>
-		</div>
+    <div class="metric-container">
+        <div class="metric">
+            <label for="harsh-braking">Harsh Braking</label>
+            <div class="metric-value">
+                <span class="metric-bar safe" style="width: 60%;">Normal</span>
+            </div>
+        </div>
+    </div>
 
-		<div class="dataRestrictions">
-			<details>
-				<summary>Data Restrictions</summary>
-				<ul>
-					<li>GPS Position
-						<div class="intgr-tag">
-							<span class="intgr-tag__text" id="gpsPosition">Not set</span>
-						</div>
-					</li>
+    <div class="metric-container">
+        <div class="metric">
+            <label for="speeding">Speeding</label>
+            <div class="metric-value">
+                <span class="metric-bar risk" style="width: 80%;">High</span>
+            </div>
+        </div>
+    </div>
 
-					<li>GPS Speed
-						<div class="intgr-tag">
-							<span class="intgr-tag__text" id="gpsSpeed">Not set</span>
-						</div>
-					</li>
-				</ul>
+    <div class="metric-container">
+        <div class="metric">
+            <label for="harsh-cornering">Harsh Cornering</label>
+            <div class="metric-value">
+                <span class="metric-bar safe" style="width: 30%;">Low</span>
+            </div>
+        </div>
+    </div>
 
-				<div id="restricted" class="intgr-alert intgr-alert--generic hidden">
-					<p>The data points under the <strong>Data Restrictions section</strong> will not be recorded and
-						stored when
-						<strong>Restricted Data Mode</strong> is <strong>Enabled</strong>.
-						<br><br>
-						<strong>Please Note:</strong> Although data may not be recorded in your environment, if your
-						employer is
-						sharing the asset's data with other Geotab databases, these data points may be available there.
-					</p>
-				</div>
-
-				<div id="unrestricted" class="intgr-alert intgr-alert--generic hidden">
-					<p>The data points under the <strong>Data Restrictions</strong> section will be recorded and stored
-						when
-						<strong>Restricted Data Mode</strong> is <strong>Disabled.</strong>
-					</p>
-				</div>
-			</details>
-		</div>
-
-		<div class="intgr-button-switcher intgr-button-switcher--horizontal">
-			<input type="radio" name="someRadio" class="status" data-status="RestrictedDataModeId" id="enableRadio">
-			<label for="enableRadio" class="radioLabel">Enable</label>
-			<input type="radio" name="someRadio" id="disableRadio" class="status" data-status="UnrestrictedDataModeId">
-			<label for="disableRadio" class="radioLabel">Disable</label>
-		</div>
-	</div>
-
+    <div class="metric-container">
+        <div class="metric">
+            <label for="harsh-acceleration">Harsh Acceleration</label>
+            <div class="metric-value">
+                <span class="metric-bar risk" style="width: 70%;">Medium</span>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
