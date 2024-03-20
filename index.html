@@ -3,76 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
     <title>Driver Performance</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 10px;
-            background: #E9EAED; /* Updated background color */
-        }
-        .container {
-            max-width: 600px;
-            margin: 20px auto;
-            background: #E5F7FD; /* Container for driver name and collision risk */
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.10);
-        }
-        .metric-container {
-            max-width: 600px;
-            margin: 20px auto;
-            background: #fff; /* Metric containers remain white */
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.10);
-        }
-        .driver-info {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .driver-name {
-            font-size: 1.5em;
-            margin-bottom: 5px;
-        }
-        .collision-risk-label {
-            font-size: 0.9em;
-            color: #999;
-        }
-        .collision-risk-percentage {
-            font-size: 2em;
-            margin-top: 5px;
-            font-weight: bold;
-        }
-        .metric {
-            margin: 10px 0;
-        }
-        .metric > label {
-            display: block;
-            font-weight: bold;
-        }
-        .metric-value {
-            background: #e9e9e9;
-            border-radius: 5px;
-            overflow: hidden;
-            margin-top: 5px;
-        }
-        .metric-bar {
-            display: block;
-            height: 20px;
-            border-radius: 5px;
-            line-height: 20px;
-            color: white;
-            text-align: center;
-            transition: width 0.4s ease;
-        }
-        .metric-bar.risk {
-            background: #e74c3c; /* Red to indicate risk */
-        }
-        .metric-bar.safe {
-            background: #2ecc71; /* Green to indicate safety */
-        }
-    </style>
+
 </head>
 <body>
     <div class="container">
