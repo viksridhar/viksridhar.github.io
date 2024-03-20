@@ -1,29 +1,128 @@
-
 <!DOCTYPE html>
-<html><head>
-<meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-
-<title>Download HOS logs</title>
-
-
-<script src="js/main.js"></script>
-<link rel="stylesheet" type="text/css" href="styles/main.css">
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Performance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            background: #E9EAED; /* Updated background color */
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #E5F7FD; /* Container for driver name and collision risk */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.10);
+        }
+        .metric-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #fff; /* Metric containers remain white */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.10);
+        }
+        .driver-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .driver-name {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+        .collision-risk-label {
+            font-size: 0.9em;
+            color: #999;
+        }
+        .collision-risk-percentage {
+            font-size: 2em;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+        .metric {
+            margin: 10px 0;
+        }
+        .metric > label {
+            display: block;
+            font-weight: bold;
+        }
+        .metric-value {
+            background: #e9e9e9;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+        .metric-bar {
+            display: block;
+            height: 20px;
+            border-radius: 5px;
+            line-height: 20px;
+            color: white;
+            text-align: center;
+            transition: width 0.4s ease;
+        }
+        .metric-bar.risk {
+            background: #e74c3c; /* Red to indicate risk */
+        }
+        .metric-bar.safe {
+            background: #2ecc71; /* Green to indicate safety */
+        }
+    </style>
 </head>
+<body>
+    <div class="container">
+        <div class="driver-info">
+            <div class="driver-name">
+                John Doe
+            </div>
+            <div class="collision-risk-label">
+                Collision Risk (per 100,000 miles)
+            </div>
+            <div class="collision-risk-percentage">
+                45%
+            </div>
+        </div>
+    </div>
 
-<body class="panel_addIn" style ="background-color : #fff">
+    <div class="metric-container">
+        <div class="metric">
+            <label for="harsh-braking">Harsh Braking</label>
+            <div class="metric-value">
+                <span class="metric-bar safe" style="width: 60%;">Normal</span>
+            </div>
+        </div>
+    </div>
 
-    <p><b>Download previous 7 days of logs as Excel report</b></p>
-    <button button id="downloadExcelButton">Click Me!</button>
+    <div class="metric-container">
+        <div class="metric">
+            <label for="speeding">Speeding</label>
+            <div class="metric-value">
+                <span class="metric-bar risk" style="width: 80%;">High</span>
+            </div>
+        </div>
+    </div>
 
-    <p><b>Open up MyGeotab and pull up logs for previous 7 days</b></p>
-    <button button id="mygeotab_button">Click Me!</button>
+    <div class="metric-container">
+        <div class="metric">
+            <label for="harsh-cornering">Harsh Cornering</label>
+            <div class="metric-value">
+                <span class="metric-bar safe" style="width: 30%;">Low</span>
+            </div>
+        </div>
+    </div>
 
+    <div class="metric-container">
+        <div class="metric">
+            <label for="harsh-acceleration">Harsh Acceleration</label>
+            <div class="metric-value">
+                <span class="metric-bar risk" style="width: 70%;">Medium</span>
+            </div>
+        </div>
+    </div>
 </body>
-
 </html>
